@@ -2,6 +2,7 @@ package collector
 
 import (
 	"errors"
+	"golang.org/x/text/encoding/charmap"
 	"io/ioutil"
 	"net/http"
 )
@@ -39,7 +40,9 @@ func (c *collector) GetContent(url string) (string, error) {
 		return "", errors.New(contentReadingFailed)
 	}
 	bodyString := string(bodyBytes)
-	return bodyString, nil
+	decoder := charmap.Windows1252.NewDecoder()
+	content, _ := decoder.String(bodyString)
+	return content , nil
 }
 
 func (c *collector) isError(response *http.Response, err error) bool {
