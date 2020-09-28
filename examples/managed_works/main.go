@@ -12,21 +12,8 @@ const (
 
 func main() {
 
-	c := collector.NewCollector()
-	content, err := c.GetContent(gruplacURL)
-
-	if err != nil {
-		return
-	}
-
-	definition, err := collector.NewDefinitionFromFile(managedWorksDefinitionPath)
-
-	if err != nil {
-		panic(err)
-	}
-
-	p := collector.NewParser()
-	results, err := p.Parse(definition, content)
+	api := collector.NewAPI()
+	results, err := api.GetContentFromFileDefinition(gruplacURL, managedWorksDefinitionPath)
 
 	if err != nil {
 		panic(err)

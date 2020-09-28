@@ -42,7 +42,7 @@ func (c *collector) GetContent(url string) (string, error) {
 	bodyString := string(bodyBytes)
 	decoder := charmap.Windows1252.NewDecoder()
 	content, _ := decoder.String(bodyString)
-	return content , nil
+	return content, nil
 }
 
 func (c *collector) isError(response *http.Response, err error) bool {
