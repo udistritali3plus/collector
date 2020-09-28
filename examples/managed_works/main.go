@@ -6,20 +6,20 @@ import (
 )
 
 const (
-	gruplac_url                   = "https://scienti.minciencias.gov.co/managed_works/jsp/visualiza/visualizagr.jsp?nro=00000000001394"
-	managed_works_definition_paht = "examples/managed_works/managed_works_definition.yml"
+	gruplacURL                 = "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001394"
+	managedWorksDefinitionPath = "examples/managed_works/managed_works_definition.yml"
 )
 
 func main() {
 
 	c := collector.NewCollector()
-	content, err := c.GetContent(gruplac_url)
+	content, err := c.GetContent(gruplacURL)
 
 	if err != nil {
 		return
 	}
 
-	definition, err := collector.NewDefinitionFromFile(managed_works_definition_paht)
+	definition, err := collector.NewDefinitionFromFile(managedWorksDefinitionPath)
 
 	if err != nil {
 		panic(err)

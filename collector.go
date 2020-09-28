@@ -27,7 +27,8 @@ func (c *collector) GetContent(url string) (string, error) {
 	}
 
 	response, err := c.client.Do(request)
-	if err != nil {
+
+	if c.isError(response, err) {
 		return "", errors.New(requestExecutionFailed)
 	}
 
@@ -39,4 +40,8 @@ func (c *collector) GetContent(url string) (string, error) {
 	}
 	bodyString := string(bodyBytes)
 	return bodyString, nil
+}
+
+func (c *collector) isError(response *http.Response, err error) bool {
+	return err != nil || response.StatusCode == http.StatusGatewayTimeout
 }
