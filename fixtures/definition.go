@@ -2,7 +2,7 @@ package fixtures
 
 const DoctoralThesisContent = `name: Tesis de doctorado
 path: "/html[1]/body[1]/table[66]/tbody[1]/tr"
-parsing:
+parser:
   lookahead-manual: true
 fields:
   -
