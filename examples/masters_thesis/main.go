@@ -7,7 +7,7 @@ import (
 
 const (
 	gruplacURL                 = "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001394"
-	managedWorksDefinitionPath = "examples/managed_works/managed_works_definition.yml"
+	managedWorksDefinitionPath = "examples/masters_thesis/masters_thesis_definition.yml"
 )
 
 func main() {
