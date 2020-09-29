@@ -1,7 +1,7 @@
 package collector
 
 import (
-	"cvlac/core/mocks"
+	"collector/mocks"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
 	"testing"

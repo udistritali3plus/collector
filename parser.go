@@ -8,7 +8,7 @@ import (
 )
 
 type Parser interface {
-	Parse(def *definition, content string) ([]map[string]string, error)
+	Parse(def *definition, content string) (Result, error)
 }
 
 type parser struct {
@@ -20,7 +20,7 @@ func NewParser() Parser {
 	return &parser{item}
 }
 
-func (p *parser) Parse(def *definition, content string) ([]map[string]string, error) {
+func (p *parser) Parse(def *definition, content string) (Result, error) {
 	results := make([]map[string]string, 0)
 	items, err := p.getItems(def.Path, content)
 	if err != nil {
@@ -41,7 +41,7 @@ func (p *parser) getItems(path, content string) ([]*html.Node, error) {
 	return items, nil
 }
 
-func (p *parser) parseItems(items []*html.Node, def *definition) []map[string]string {
+func (p *parser) parseItems(items []*html.Node, def *definition) Result {
 
 	fields := make([]map[string]string, 0)
 

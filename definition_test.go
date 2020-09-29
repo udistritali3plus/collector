@@ -1,7 +1,7 @@
 package collector
 
 import (
-	"cvlac/core/fixtures"
+	"collector/fixtures"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

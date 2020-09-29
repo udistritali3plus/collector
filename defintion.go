@@ -8,10 +8,11 @@ import (
 )
 
 type definition struct {
-	Name   string            `yaml:"name"`
-	Path   string            `yaml:"path"`
-	Fields []FieldDefinition `yaml:"fields"`
-	Parser ParserDefinition  `yaml:"parser"`
+	Name    string             `yaml:"name"`
+	Path    string             `yaml:"path"`
+	Fields  []FieldDefinition  `yaml:"fields"`
+	Parser  ParserDefinition   `yaml:"parser"`
+	Filters []FilterDefinition `yaml:"filters"`
 }
 
 type FieldDefinition struct {

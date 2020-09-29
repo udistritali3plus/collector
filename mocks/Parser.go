@@ -10,11 +10,11 @@ type Parser struct {
 }
 
 // Parse provides a mock function with given fields: def, content
-func (_m *Parser) Parse(def core.definition, content string) ([]map[string]string, error) {
+func (_m *Parser) Parse(def *collector.definition, content string) ([]map[string]string, error) {
 	ret := _m.Called(def, content)
 
 	var r0 []map[string]string
-	if rf, ok := ret.Get(0).(func(core.definition, string) []map[string]string); ok {
+	if rf, ok := ret.Get(0).(func(*collector.definition, string) []map[string]string); ok {
 		r0 = rf(def, content)
 	} else {
 		if ret.Get(0) != nil {
@@ -23,7 +23,7 @@ func (_m *Parser) Parse(def core.definition, content string) ([]map[string]strin
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(core.definition, string) error); ok {
+	if rf, ok := ret.Get(1).(func(*collector.definition, string) error); ok {
 		r1 = rf(def, content)
 	} else {
 		r1 = ret.Error(1)
