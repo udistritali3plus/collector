@@ -1,4 +1,4 @@
-name: Tesis de mastría
+name: Tesis de doctorado
 path: "/html[1]/body[1]/table[66]/tbody[1]/tr"
 parser:
   lookahead-manual: true
@@ -33,5 +33,5 @@ fields:
 
 filters:
   -
-    fn: contains(Trabajo de grado de maestría)
+    fn: eq(Tesis de doctorado)
     field: type
