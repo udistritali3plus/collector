@@ -1,0 +1,35 @@
+name: Software
+path: "/html[1]/body[1]/table[45]/tbody[1]/tr"
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: type
+    ex: (<strong>).*(</strong>)
+  -
+    name: name
+    ex: (</strong>).*(<br/>)
+
+  - name: release_country
+    ex: (<br/>)\s.*(\d{4}) #No elimina el salto de linea ni espacios antes del pais ni el año despues
+  -
+    name: release_year
+    ex: \d{4} 
+  -
+    name: disponibility
+    ex: (Disponibilidad:)(.*)(, Sitio)
+  -
+    name: web_site
+    ex: (Sitio web:)(.*)(<br/>)
+  -
+    name: comercial_name
+    ex: (Nombre comercial:)(.*)(, Nombre del proyecto:)
+  -
+    name: project_name
+    ex: (Nombre del proyecto:)(.*)(<br/>)
+  -
+    name: funding_institution
+    ex: (Institución financiadora:).*(\s+)
+  -
+    name: autores
+    ex: (Autores:)(.*),
