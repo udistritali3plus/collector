@@ -18,10 +18,5 @@ func main() {
 		panic(err)
 	}
 
-	for _, fields := range results {
-		for field, value := range fields {
-			fmt.Printf("%s: %s\n", field, value)
-		}
-		fmt.Println()
-	}
+	fmt.Println(results)
 }
