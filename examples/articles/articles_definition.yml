@@ -1,0 +1,38 @@
+name: Artículos
+path: "/html[1]/body[1]/table[14]/tbody[1]/tr"
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: type
+    ex: (<strong>).*(:</strong>)
+  -
+    name: title
+    ex: (</strong>).*(<br>) #No funciona en GO, funciona en pagina web
+  -
+    name: published_country
+    ex: (\s{2,}).*(,) #No funciona, trae diferentes cadenas en GO y en web 
+  -
+    name: maganize_name
+    ex: (,).*(ISSN:)
+  -
+    name: maganize_issn
+    ex: (ISSN:).*(, \d{4}) #No elimina el año despues del issn (final de linea)
+  -
+    name: published_year
+    ex: (\d{4}, ).*( vol:) #No elimina los 4 digitos previos pertenecientes al issn
+  -
+    name: vol
+    ex: (vol:).*( fasc:)
+  -
+    name: fasc
+    ex: (fasc:).*( págs:)
+  -
+    name: pags
+    ex: (págs:).*(, <strong>)
+  -
+    name: DOI
+    ex: (DOI:</strong>).*(\s{2,} <br>) #No funciona en go, si en web
+  -
+    name: autores
+    ex: (Autores:).*(,)
