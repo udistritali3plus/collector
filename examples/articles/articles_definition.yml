@@ -35,4 +35,4 @@ fields:
     ex: (DOI:</strong>).*(\s{2,} <br>) #No funciona en go, si en web
   -
     name: autores
-    ex: (Autores:).*(,)
+    ex: (Autores:).*, 
