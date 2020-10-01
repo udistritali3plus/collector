@@ -1,0 +1,24 @@
+name: Empresas de base tecnológica
+path: "/html[1]/body[1]/table[46]/tbody[1]/tr"
+
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: type
+    ex: (<strong>)(.*)(</strong> :)
+  -
+    name: title
+    ex: (</strong> :)(.*)(<br/>)
+  -
+    name: nit
+    ex: (NIT:)(.*)(, Fecha)
+  -
+    name: registred_at
+    ex: (cámara:).*( <br/>)
+  -
+    name: has_market_products
+    ex: (<br/> )(\012).* #Problem
+  -
+    name: authors
+    ex: (Autores:)(.*)(,)

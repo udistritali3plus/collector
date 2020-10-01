@@ -1,0 +1,21 @@
+name: Prototipos
+path: "/html[1]/body[1]/table[38]/tbody[1]/tr"
+
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: name
+    ex: (</strong>).*(<br/>)
+  -
+    name: year
+    ex: (, ).*(,) #ok?
+  -
+    name: availability
+    ex: (Disponibilidad:)(.*)(, Institución)
+  -
+    name: funding_institution
+    ex: (Institución financiadora:)(.*)()
+  -
+    name: authors
+    ex: (Autores:)(.*)(,)

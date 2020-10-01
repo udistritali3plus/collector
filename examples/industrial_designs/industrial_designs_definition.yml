@@ -1,0 +1,21 @@
+name: Diseños industriales
+path: "/html[1]/body[1]/table[26]/tbody[1]/tr"
+
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: title
+    ex: (</strong>).*(<br/>)
+  -
+    name: year
+    ex: (, )(.*)(,) #ok?
+  -
+    name: availability
+    ex: (Disponibilidad:)(.*)(, Institución)
+  -
+    name: funding_institution
+    ex: (financiadora:)(.*)() #ok?
+  -
+    name: authors
+    ex: (Autores:)(.*)(,)
