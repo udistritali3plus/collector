@@ -15,10 +15,10 @@ fields:
     ex: (NIT:)(.*)(, Fecha)
   -
     name: registred_at
-    ex: (mara).*(<br>) #Problem
+    ex: (cámara:).*( <br/>)
   -
     name: has_market_products
-    ex: (<br> \n)(.*)() #Problem
+    ex: (<br/> )(\012).* #Problem
   -
     name: authors
     ex: (Autores:)(.*)(,)
