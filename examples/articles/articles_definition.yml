@@ -8,19 +8,19 @@ fields:
     ex: (<strong>).*(:</strong>)
   -
     name: title
-    ex: (</strong>).*(<br>) #No funciona en GO, funciona en pagina web
+    ex: (</strong>).*(<br/>)
   -
     name: published_country
-    ex: (\s{2,}).*(,) #No funciona, trae diferentes cadenas en GO y en web 
+    ex: (<br/>\s+).*([a-z]+ ISSN) #Funciona parcialmente, no elimina extremos de validacion de cadena, <br/> y despues de ,
   -
     name: maganize_name
     ex: (,).*(ISSN:)
   -
     name: maganize_issn
-    ex: (ISSN:).*(, \d{4}) #No elimina el año despues del issn (final de linea)
+    ex: "[0-9]+-[0-9]+X?"
   -
     name: published_year
-    ex: (\d{4}, ).*( vol:) #No elimina los 4 digitos previos pertenecientes al issn
+    ex: \d{4}( vol:)
   -
     name: vol
     ex: (vol:).*( fasc:)
@@ -32,7 +32,7 @@ fields:
     ex: (págs:).*(, <strong>)
   -
     name: DOI
-    ex: (DOI:</strong>).*(\s{2,} <br>) #No funciona en go, si en web
+    ex: (DOI:</strong>).*(\s{2,} <br/>) #No elimina salto de linea ni etiqueta br
   -
     name: autores
     ex: (Autores:).*, 
