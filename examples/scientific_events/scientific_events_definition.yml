@@ -1,0 +1,27 @@
+name: Eventos científicos
+path: "/html[1]/body[1]/table[50]/tbody[1]/tr"
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: type
+    ex: (<strong>).*(</strong>)
+  -
+    name: name
+    ex: (</strong>).*(<br/>)
+
+  - name: place
+    ex: (<br/>)\s.*(,)\s(desde)
+  -
+    name: start_date
+    ex: (desde )\d{4}-\d{2}-\d{2}
+  -
+    name: end_date
+    ex: (hasta )\d{4}-\d{2}-\d{2}
+  -
+    name: scope
+    ex: (Ámbito:)\s[^,]*
+  -
+    name: participation_type
+    ex: (Tipos de participación:).*(<br/>)
+  -
