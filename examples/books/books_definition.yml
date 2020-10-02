@@ -1,0 +1,32 @@
+name: Libros
+path: "/html[1]/body[1]/table[15]/tbody[1]/tr"
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: type
+    ex: (<strong>).*(</strong>)
+  -
+    name: name
+    ex: (</strong>).*(<br/>)
+
+  - name: isbn
+    ex: (ISBN:).*(vol)
+  -
+    name: published_country
+    ex: (<br/>\s+).*(,[0-9]+, ISBN) #Funciona parcialmente, no elimina extremos de validacion de cadena, <br/> y despues de ,
+  -
+    name: published_year
+    ex: \d{4}
+  -
+    name: vol
+    ex: (vol:).*( págs:)
+  -
+    name: pags
+    ex: (págs:).*(, Ed.)
+  -
+    name: editorial
+    ex: (Ed.)(.*)\s+(<br/>)
+  -
+    name: autores
+    ex: (Autores:)(.*),
