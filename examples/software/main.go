@@ -7,7 +7,7 @@ import (
 
 const (
 	gruplacURL                 = "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001394"
-	softwareDefinitionPath = "/home/david/Documentos/pasantia/collector/examples/software/software_definition.yml"
+	softwareDefinitionPath = "examples/software/software_definition.yml"
 )
 
 func main() {
@@ -19,10 +19,6 @@ func main() {
 		panic(err)
 	}
 
-	for _, fields := range results {
-		for field, value := range fields {
-			fmt.Printf("%s: %s\n", field, value)
-		}
-		fmt.Println()
-	}
+	fmt.Println(results)
+
 }
