@@ -11,7 +11,7 @@ fields:
     ex: (</strong>).*(<br/>)
   -
     name: published_country
-    ex: (<br/>\s+).*([a-z]+ ISSN) #Funciona parcialmente, no elimina extremos de validacion de cadena, <br/> y despues de ,
+    ex: (<br/>)(\s).*?(,)
   -
     name: maganize_name
     ex: (,).*(ISSN:)
