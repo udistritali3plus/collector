@@ -1,11 +1,10 @@
 package collector
 
-
 type baseFilter struct {
-	next FilterFunction
+	next          FilterFunction
 	operationName string
 
-	predicateFunction func(predicate,value string) bool
+	predicateFunction func(predicate, value string) bool
 }
 
 func (f *baseFilter) Next(fn FilterFunction) {
@@ -41,5 +40,3 @@ func (f *baseFilter) filter(r Result, def FilterDefinition) Result {
 	}
 	return results
 }
-
-

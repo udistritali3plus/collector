@@ -8,7 +8,7 @@ func NewEqFilter() FilterFunction {
 
 	f := &eqFilter{&baseFilter{}}
 	f.operationName = equalsFunctionName
-	f.predicateFunction =  f.evaluatePredicate
+	f.predicateFunction = f.evaluatePredicate
 	return f
 }
 

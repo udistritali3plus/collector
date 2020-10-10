@@ -6,7 +6,7 @@ type containsFilter struct {
 	*baseFilter
 }
 
-func NewContainsFilter() FilterFunction{
+func NewContainsFilter() FilterFunction {
 	f := &containsFilter{&baseFilter{}}
 	f.operationName = containsFunctionName
 	f.predicateFunction = f.evaluatePredicate
@@ -16,5 +16,3 @@ func NewContainsFilter() FilterFunction{
 func (f *containsFilter) evaluatePredicate(predicate, value string) bool {
 	return strings.Contains(value, predicate)
 }
-
-
