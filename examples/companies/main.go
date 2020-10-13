@@ -1,8 +1,8 @@
 package main
 
 import (
-	"collector"
 	"fmt"
+	"github.com/udistritali3plus/collector"
 )
 
 const (

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"collector"
+	"github.com/udistritali3plus/collector"
 	"fmt"
 )
 

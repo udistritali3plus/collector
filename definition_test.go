@@ -1,8 +1,8 @@
 package collector
 
 import (
-	"collector/fixtures"
 	"github.com/stretchr/testify/assert"
+	"github.com/udistritali3plus/collector/fixtures"
 	"testing"
 )
 
