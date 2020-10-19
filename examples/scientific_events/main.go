@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	gruplacURL                 = "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001394"
+	gruplacURL                     = "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001394"
 	scientificEventsDefinitionPath = "examples/scientific_events/scientific_events_definition.yml"
 )
 
