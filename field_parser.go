@@ -6,6 +6,10 @@ import (
 	"strings"
 )
 
+const (
+	whitespaceRegex = `\s+`
+)
+
 type FieldParser interface {
 	parse(def *definition, document string) map[string]string
 }
@@ -25,7 +29,6 @@ func (p *fieldParser) parse(def *definition, document string) map[string]string 
 
 	fields := def.Fields
 	for _, f := range fields {
-
 		content := p.getFieldValue(f.Ex, document)
 		if def.Parser.LookAheadManual {
 			content = p.applyLookAhead(f.Ex, content)
@@ -47,6 +50,9 @@ func (p *fieldParser) getFieldValue(ex, document string) string {
 	if len(content) <= 0 {
 		return ""
 	}
+	space := regexp.MustCompile(whitespaceRegex)
+	content = space.ReplaceAllString(content, " ")
+	content = strings.TrimSuffix(content, "\r\n")
 	return content
 }
 
