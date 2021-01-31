@@ -29,7 +29,7 @@ fields:
     ex: (Institución:)(.*)
   -
     name: autores
-    ex: (Autores:)(.*)(,)
+    ex: (Autores:).*,
 
 filters:
   -

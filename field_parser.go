@@ -64,7 +64,7 @@ func (p *fieldParser) applyLookAhead(ex, text string) string {
 
 	expressions := p.lookAheadParser.apply(ex)
 	for _, e := range expressions {
-		text = strings.ReplaceAll(text, e, "")
+		text = strings.Replace(text, e, "", 1)
 	}
 	return text
 }

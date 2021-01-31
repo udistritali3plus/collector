@@ -1,0 +1,11 @@
+name: Libros
+path: "/html/body/table[5]/tbody[1]/tr"
+parser:
+  lookahead-manual: true
+fields:
+  -
+    name: names
+    ex: (>).*(</a>)
+
+  - name: link
+    ex: (href=").*(")
