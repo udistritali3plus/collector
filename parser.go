@@ -50,5 +50,10 @@ func (p *parser) parseItems(items []*html.Node, def *definition) Result {
 		field := p.fieldParser.parse(def, content)
 		fields = append(fields, field)
 	}
+
+	if def.Parser.SkipResults {
+		return fields[def.Parser.SkipNumberResults:]
+	}
+
 	return fields
 }

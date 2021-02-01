@@ -2,6 +2,8 @@ name: Libros
 path: "/html/body/table[5]/tbody[1]/tr"
 parser:
   lookahead-manual: true
+  skip-results: true
+  skip-number-results: 2
 fields:
   -
     name: names
