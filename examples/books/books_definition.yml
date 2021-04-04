@@ -7,7 +7,7 @@ fields:
     name: type
     ex: (<strong>).*(</strong>)
   -
-    name: name
+    name: title
     ex: (</strong>).*(<br/>)
 
   - name: isbn
